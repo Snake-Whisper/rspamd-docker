@@ -17,4 +17,8 @@ RUN wget -qO- https://github.com/rspamd/rspamd/archive/refs/tags/${RSPAMD_VERSIO
     addgroup -S -g 120 rspamd && \
     addgroup rspamd ntp && \
     mkdir /var/log/rspamd
-ENTRYPOINT ["rspamd", "-u", "rspamd", "-g", "rspamd", "-f"]
+#ENTRYPOINT ["rspamd", "-u", "rspamd", "-g", "rspamd", "-f"]
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
