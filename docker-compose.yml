@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+ rspamd:
+  image: rspamd:2.7
+  container_name: rspamd
+  restart: unless-stopped
+  volumes:
+   - /etc/rspamd/local.d/:/usr/local/etc/rspamd/local.d:ro
+   - rspamd:/var/lib/rspamd
+   - /run/rspamd:/run/rspamd
+   - /var/spool/postfix/rspamd/:/var/spool/postfix/rspamd/
+   - /run/redis/redis-server.sock:/run/redis/redis-server.sock
+volumes:
+ rspamd:
