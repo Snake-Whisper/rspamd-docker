@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:3.13
 
-ENV RSPAMD_VERSION=2.7
+ENV RSPAMD_VERSION=3.1
 
 RUN apk add --no-cache glib hyperscan icu-libs libsodium sqlite-libs lua-libs
 
