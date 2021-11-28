@@ -1,7 +1,7 @@
 version: '3.3'
 services:
  rspamd:
-  image: rspamd:3.1
+  image: snakewhisper/rspamd:3.1
   container_name: rspamd
   restart: unless-stopped
   volumes:
